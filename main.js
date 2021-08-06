@@ -12,8 +12,15 @@ const wifi = require('node-wifi')
 
 wifi.init({ iface: 'wlan0' })
 
-wifi
-    .getCurrentConnections()
+wifi.scan()
+    .then(networks => {
+        console.log(networks)
+    })
+    .catch(error => {
+        // error
+    });
+
+wifi.getCurrentConnections()
     .then(networks => {
         console.log(networks)
     })
