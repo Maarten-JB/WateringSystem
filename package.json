@@ -32,6 +32,7 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "node-cleanup": "^2.1.2",
+    "node-wifi": "^2.0.14",
     "nodemon": "^2.0.12",
     "pigpio": "^3.3.1",
     "socket.io": "^4.1.3",

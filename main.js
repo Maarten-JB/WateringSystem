@@ -5,9 +5,21 @@ const express = require('express')
 const app = express()
 const server = require('http').createServer(app)
 const fs = require('fs')
+const wifi = require('node-wifi')
 
 // TODO: Put message strings inside the wateringSystem variable to easily edit them, instead of hard-coding them
 // TODO: Implement home.openweathermap.org for weather forecast to control rain automatically (https://findanyanswer.com/how-much-mm-of-rain-is-a-lot)
+
+wifi.init({ iface: 'wlan0' })
+
+wifi
+    .getCurrentConnections()
+    .then(networks => {
+        console.log(networks)
+    })
+    .catch(error => {
+        // error
+    });
 
 // Export server
 module.exports = server
